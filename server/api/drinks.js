@@ -2,25 +2,12 @@ const router = require('express').Router({ mergeParams: true });
 const { Drink } = require('../db');
 module.exports = router;
 
-// /api/cart
-// router.get('/', async (req, res, next) => {
-//   try {
-//     const order = await req.cart.get({
-//       include: [
-//         {
-//           model: Product,
-//           through: {attributes: ['quantity']},
-//           order: [['createAt', 'DESC']]
-//         }
-//       ]
-//     })
-
-//     if (order) {
-//       res.json(order.products)
-//     } else {
-//       res.json([])
-//     }
-//   } catch (error) {
-//     next(error)
-//   }
-// })
+// /api/drinks
+router.get('/', async (req, res, next) => {
+  try {
+    const drinks = await Drink.findAll();
+    res.json(drinks);
+  } catch (error) {
+    next(error);
+  }
+});

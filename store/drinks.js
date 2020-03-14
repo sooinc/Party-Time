@@ -1,30 +1,32 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const GOT_DRINKS = 'GOT_DRINKS';
+// const GOT_DRINKS = 'GOT_DRINKS';
 
-export const gotDrinks = drinks => ({
-  type: GOT_DRINKS,
-  drinks,
-});
+// export const gotDrinks = drinks => ({
+//   type: GOT_DRINKS,
+//   drinks,
+// });
 
-export const fetchDrinks = () => {
-  return async dispatch => {
-    try {
-      const { data } = await axios.get('/api/drinks');
-      dispatch(gotDrinks(data));
-    } catch (err) {
-      console.log('not able to load drinks');
-    }
-  };
-};
+// export const fetchDrinks = () => {
+//   return async dispatch => {
+//     try {
+//       const { data } = await axios.get(
+//         'party-time-server.herokuapp.com/api/drinks'
+//       );
+//       dispatch(gotDrinks(data));
+//     } catch (err) {
+//       console.log('not able to load drinks');
+//     }
+//   };
+// };
 
-const drinksReducer = (state = [], action) => {
-  switch (action.type) {
-    case GOT_DRINKS:
-      return { drinks: action.drinks };
-    default:
-      return state;
-  }
-};
+// const drinksReducer = (state = {}, action) => {
+//   switch (action.type) {
+//     case GOT_DRINKS:
+//       return { ...state, drinks: action.drinks };
+//     default:
+//       return state;
+//   }
+// };
 
-export default drinksReducer;
+// export default drinksReducer;

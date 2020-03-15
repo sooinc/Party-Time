@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import RecipePage from './RecipePage';
 import {
@@ -7,15 +7,15 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
-  Button,
 } from 'react-native';
+import { Button } from 'react-native-paper';
 import { fetchDetailedDrinks } from '../store/drinks';
 
 class Drinks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
+      isVisible: false,
       currentIndex: 99,
     };
     this.imageUrl = this.imageUrl.bind(this);
@@ -37,7 +37,7 @@ class Drinks extends React.Component {
     let images = this.imageUrl(this.props.drinks);
     let id = this.findId(this.props.drinks, images[this.state.currentIndex]);
     this.props.fetchDetailedDrinksDispatch(id);
-    this.setState({ showModal: true });
+    this.setState({ isVisible: true });
   }
 
   timer() {
@@ -49,7 +49,7 @@ class Drinks extends React.Component {
     }
   }
   goHandler(id) {
-    // this.setState({ currentIndex: 0 });
+    this.setState({ currentIndex: 99 });
     this.intervalId = setInterval(this.timer.bind(this), 200);
   }
 
@@ -73,7 +73,7 @@ class Drinks extends React.Component {
     const { detailed } = this.props;
 
     return (
-      <ScrollView>
+      <View>
         <TouchableOpacity onPress={() => this.onPressHandler()}>
           <Image
             key={Math.random().toString()}
@@ -81,7 +81,11 @@ class Drinks extends React.Component {
             style={styles.images}
           />
         </TouchableOpacity>
-        <Button title="Go!" onPress={this.goHandler} />
+        <View style={styles.button}>
+          <Button mode="contained" color="#726E75" onPress={this.goHandler}>
+            Go!
+          </Button>
+        </View>
 
         {/* {images.map(image => {
           let key = this.findId(this.props.drinks, image);
@@ -102,11 +106,11 @@ class Drinks extends React.Component {
         })} */}
 
         <RecipePage
-          visible={this.state.showModal}
-          onClose={() => this.setState({ showModal: false })}
+          isVisible={this.state.isVisible}
+          onClose={() => this.setState({ isVisible: false })}
           detailed={detailed}
         />
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -115,6 +119,13 @@ const styles = StyleSheet.create({
   images: {
     width: 200,
     height: 200,
+  },
+  button: {
+    paddingTop: 10,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
 });
 

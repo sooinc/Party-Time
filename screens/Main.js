@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import FirebaseWrapper from '../firebase/firebase';
 
-import Drinks from './Drinks';
+import Drinks from '../components/Drinks';
 import { fetchDrinks } from '../store/drinks';
 
 class Main extends React.Component {
@@ -30,7 +30,7 @@ class Main extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.textContainer}>
-          <Text style={styles.text}>Party Time</Text>
+          <Text style={styles.text}>PARTY TIME</Text>
         </View>
         <View style={styles.imageContainer}>
           <Drinks drinks={drinks} />
@@ -50,17 +50,25 @@ const mapDispatch = dispatch => ({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
+    backgroundColor: '#948B89',
+    flex: 1,
   },
   textContainer: {
     flex: 1,
-    marginTop: 300,
+
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   text: {
     color: 'white',
-    fontSize: 20,
+    height: '20%',
+    fontSize: 50,
+    fontFamily: 'Futura-Medium',
   },
   imageContainer: {
+    flex: 1,
+    marginBottom: 200,
+    height: '80%',
     justifyContent: 'center',
     alignSelf: 'center',
   },

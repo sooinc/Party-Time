@@ -1,16 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import FirebaseWrapper from '../firebase/firebase';
 
-import RecipePage from './RecipePage';
-import { fetchDrinks, fetchDetailedDrinks } from '../store/drinks';
+// import RecipePage from './RecipePage';
+import Drinks from './Drinks';
+import { fetchDrinks } from '../store/drinks';
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      showModal: false,
+      // showModal: false,
     };
   }
 
@@ -18,34 +27,36 @@ class Main extends React.Component {
     this.props.fetchDrinksDispatch();
   }
 
-  onPressHandler(id) {
-    this.setState({ showModal: true });
-    this.props.fetchDetailedDrinksDispatch(id);
-  }
+  // onPressHandler(id) {
+  //   this.setState({ showModal: true });
+  //   this.props.fetchDetailedDrinksDispatch(id);
+  // }
 
   render() {
-    const { drinks, detailed } = this.props.drinkList;
-
-    console.log(this.props);
+    const { drinks } = this.props.drinkList;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Party Time</Text>
-        <ScrollView>
-          {drinks.map(drink => (
+        <View>
+          <Text style={styles.text}>Party Time</Text>
+        </View>
+        <View>
+          <Drinks drinks={drinks} />
+        </View>
+
+        {/* {drinks.map(drink => (
             <Button
               title={`${drink.strDrink}`}
               key={drink.idDrink}
               onPress={() => this.onPressHandler(drink.idDrink)}
             />
-          ))}
-        </ScrollView>
+          ))} */}
 
-        <RecipePage
+        {/* <RecipePage
           visible={this.state.showModal}
           onClose={() => this.setState({ showModal: false })}
           detailed={detailed}
-        />
+        /> */}
       </View>
     );
   }
@@ -53,12 +64,12 @@ class Main extends React.Component {
 
 const mapState = state => ({
   drinkList: state.drinkList,
-  detailed: state.drinkList.detailed,
+  // detailed: state.drinkList.detailed,
 });
 
 const mapDispatch = dispatch => ({
   fetchDrinksDispatch: () => dispatch(fetchDrinks()),
-  fetchDetailedDrinksDispatch: id => dispatch(fetchDetailedDrinks(id)),
+  // fetchDetailedDrinksDispatch: id => dispatch(fetchDetailedDrinks(id)),
 });
 
 const styles = StyleSheet.create({

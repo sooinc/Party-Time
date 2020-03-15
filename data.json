@@ -3,104 +3,37 @@
     {
       "strDrink": "'57 Chevy with a White License Plate",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/qyyvtu1468878544.jpg",
-      "idDrink": "14029",
-      "ingredients": ["1 oz Creme de Cacao", "1 oz Vodka"],
-      "instructions": [
-        "1. Fill a rocks glass with ice",
-        "2. Add white creme de cacao and vodka",
-        "3. Stir"
-      ]
+      "idDrink": "14029"
     },
     {
       "strDrink": "155 Belmont",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg",
-      "idDrink": "15346",
-      "ingredients": [
-        "1 shot Dark Rum",
-        "2 shots Light Rum",
-        "1 shot Vodka",
-        "1 shot Orange Juice"
-      ],
-      "instructions": [
-        "1. Blend with ice",
-        "2. Serve in a wine glass",
-        "3. Garnish with carrot"
-      ]
+      "idDrink": "15346"
     },
     {
       "strDrink": "747 Drink",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/i9suxb1582474926.jpg",
-      "idDrink": "178318",
-      "ingredients": [
-        "1 oz Vodka",
-        "1 oz Roses Sweetened Lime Juice",
-        "1 oz Cranberry",
-        "1 oz Sprite"
-      ],
-      "instructions": [
-        "1. Fill a Collins glass with ice",
-        "2. Pour in vodka, lime cordial, and cranberry juice",
-        "3. Fill up with Sprite.",
-        "4. Garnish with a Lime wheel or some cranberries"
-      ]
+      "idDrink": "178318"
     },
     {
       "strDrink": "9 1/2 Weeks",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/xvwusr1472669302.jpg",
-      "idDrink": "16108",
-      "ingredients": [
-        "1 shot Dark Rum",
-        "2 shots Light Rum",
-        "1 shot Vodka",
-        "1 shot Orange Juice"
-      ],
-      "instructions": [
-        "1. Combine all ingredients in glass mixer",
-        "2. Chill and strain into Cocktail glass",
-        "3. Garnish with sliced strawberry"
-      ]
+      "idDrink": "16108"
     },
     {
       "strDrink": "A Gilligan's Island",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/wysqut1461867176.jpg",
-      "idDrink": "16943",
-      "ingredients": [
-        "1 shot Dark Rum",
-        "2 shots Light Rum",
-        "1 shot Vodka",
-        "1 shot Orange Juice"
-      ],
-      "instructions": [
-        "1. Blend with ice. 2. Serve in a wine glass. 3. Garnish with carrot."
-      ]
+      "idDrink": "16943"
     },
     {
       "strDrink": "A True Amaretto Sour",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg",
-      "idDrink": "17005",
-      "ingredients": [
-        "1 shot Dark Rum",
-        "2 shots Light Rum",
-        "1 shot Vodka",
-        "1 shot Orange Juice"
-      ],
-      "instructions": [
-        "1. Blend with ice. 2. Serve in a wine glass. 3. Garnish with carrot."
-      ]
+      "idDrink": "17005"
     },
     {
       "strDrink": "A.D.M. (After Dinner Mint)",
       "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/ruxuvp1472669600.jpg",
-      "idDrink": "14560",
-      "ingredients": [
-        "1 shot Dark Rum",
-        "2 shots Light Rum",
-        "1 shot Vodka",
-        "1 shot Orange Juice"
-      ],
-      "instructions": [
-        "1. Blend with ice. 2. Serve in a wine glass. 3. Garnish with carrot."
-      ]
+      "idDrink": "14560"
     },
     {
       "strDrink": "A1",

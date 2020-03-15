@@ -31,6 +31,7 @@ export const fetchDrinks = () => {
 export const fetchDetailedDrinks = drinkId => {
   return async dispatch => {
     try {
+      // console.log('drinkid:', drinkId);
       let { data } = await axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`
       );

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 import { fetchDetailedDrinks } from '../store/drinks';
 
@@ -15,12 +16,41 @@ class Drinks extends React.Component {
     super(props);
     this.state = {
       showModal: false,
+      currentIndex: 99,
     };
+    this.imageUrl = this.imageUrl.bind(this);
+    this.findId = this.findId.bind(this);
+    this.onPressHandler = this.onPressHandler.bind(this);
+    this.goHandler = this.goHandler.bind(this);
   }
 
-  onPressHandler(id) {
-    this.setState({ showModal: true });
+  componentDidMount() {
+    this.intervalId = setInterval(this.timer.bind(this), 200);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  onPressHandler() {
+    clearInterval(this.intervalId);
+    let images = this.imageUrl(this.props.drinks);
+    let id = this.findId(this.props.drinks, images[this.state.currentIndex]);
     this.props.fetchDetailedDrinksDispatch(id);
+    this.setState({ showModal: true });
+  }
+
+  timer() {
+    this.setState({
+      currentIndex: this.state.currentIndex - 1,
+    });
+    if (this.state.currentIndex < 1) {
+      clearInterval(this.intervalId);
+    }
+  }
+  goHandler(id) {
+    // this.setState({ currentIndex: 0 });
+    this.intervalId = setInterval(this.timer.bind(this), 200);
   }
 
   imageUrl(drinks) {
@@ -30,12 +60,12 @@ class Drinks extends React.Component {
   }
 
   findId(arr, url) {
-    let found = arr.filter(one => {
-      if (one.strDrinkThumb === url) {
-        return one.idDrink;
+    let foundObj = arr.filter(obj => {
+      if (obj.strDrinkThumb === url) {
+        return obj;
       }
-    });
-    return found[0].idDrink;
+    })[0];
+    return foundObj.idDrink;
   }
 
   render() {
@@ -44,7 +74,16 @@ class Drinks extends React.Component {
 
     return (
       <ScrollView>
-        {images.map(image => {
+        <TouchableOpacity onPress={() => this.onPressHandler()}>
+          <Image
+            key={Math.random().toString()}
+            source={{ uri: images[this.state.currentIndex] }}
+            style={styles.images}
+          />
+        </TouchableOpacity>
+        <Button title="Go!" onPress={this.goHandler} />
+
+        {/* {images.map(image => {
           let key = this.findId(this.props.drinks, image);
           return (
             <View>
@@ -60,7 +99,7 @@ class Drinks extends React.Component {
               </TouchableOpacity>
             </View>
           );
-        })}
+        })} */}
 
         <RecipePage
           visible={this.state.showModal}

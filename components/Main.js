@@ -11,52 +11,30 @@ import {
 } from 'react-native';
 import FirebaseWrapper from '../firebase/firebase';
 
-// import RecipePage from './RecipePage';
 import Drinks from './Drinks';
 import { fetchDrinks } from '../store/drinks';
 
 class Main extends React.Component {
   constructor() {
     super();
-    this.state = {
-      // showModal: false,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
     this.props.fetchDrinksDispatch();
   }
 
-  // onPressHandler(id) {
-  //   this.setState({ showModal: true });
-  //   this.props.fetchDetailedDrinksDispatch(id);
-  // }
-
   render() {
     const { drinks } = this.props.drinkList;
 
     return (
       <View style={styles.container}>
-        <View>
+        <View style={styles.textContainer}>
           <Text style={styles.text}>Party Time</Text>
         </View>
-        <View>
+        <View style={styles.imageContainer}>
           <Drinks drinks={drinks} />
         </View>
-
-        {/* {drinks.map(drink => (
-            <Button
-              title={`${drink.strDrink}`}
-              key={drink.idDrink}
-              onPress={() => this.onPressHandler(drink.idDrink)}
-            />
-          ))} */}
-
-        {/* <RecipePage
-          visible={this.state.showModal}
-          onClose={() => this.setState({ showModal: false })}
-          detailed={detailed}
-        /> */}
       </View>
     );
   }
@@ -64,24 +42,27 @@ class Main extends React.Component {
 
 const mapState = state => ({
   drinkList: state.drinkList,
-  // detailed: state.drinkList.detailed,
 });
 
 const mapDispatch = dispatch => ({
   fetchDrinksDispatch: () => dispatch(fetchDrinks()),
-  // fetchDetailedDrinksDispatch: id => dispatch(fetchDetailedDrinks(id)),
 });
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+  },
+  textContainer: {
+    flex: 1,
+    marginTop: 300,
   },
   text: {
     color: 'white',
     fontSize: 20,
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
 });
 

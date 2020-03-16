@@ -51,24 +51,25 @@ const mapDispatch = dispatch => ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#948B89',
-    flex: 1,
+    marginTop: -50,
+    height: 670,
+    marginBottom: 0,
+    width: '100%',
   },
   textContainer: {
-    flex: 1,
-
+    height: 300,
     justifyContent: 'center',
     alignSelf: 'center',
   },
   text: {
     color: 'white',
-    height: '20%',
+    height: 100,
     fontSize: 50,
     fontFamily: 'Futura-Medium',
   },
   imageContainer: {
-    flex: 1,
     marginBottom: 200,
-    height: '80%',
+    height: 100,
     justifyContent: 'center',
     alignSelf: 'center',
   },

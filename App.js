@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Header from './components/Header';
-import ConnectedMain from './screens/Main';
-import CameraScreen from './screens/Camera';
-import UserScreen from './screens/User';
+// import ConnectedMain from './screens/Main';
+import TabBar from './components/TabBar';
+// import CameraScreen from './screens/Camera';
+// import UserScreen from './screens/User';
 
 import FirebaseWrapper from './firebase/firebase';
 import { firebaseConfig } from './firebase/config';
@@ -57,7 +58,8 @@ export default function App() {
     <Provider store={store}>
       <PaperProvider>
         <Header />
-        <ConnectedMain />
+        {/* <ConnectedMain /> */}
+        <TabBar />
         {/* <AppNavigator /> */}
       </PaperProvider>
     </Provider>

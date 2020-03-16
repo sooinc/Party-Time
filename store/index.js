@@ -4,9 +4,11 @@ import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import drinksReducer from './drinks';
+import placesReducer from './places';
 
 const reducer = combineReducers({
   drinkList: drinksReducer,
+  places: placesReducer,
 });
 
 const middleware = composeWithDevTools(

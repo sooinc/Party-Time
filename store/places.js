@@ -12,7 +12,7 @@ export const fetchPlaces = (lat, long) => {
   return async dispatch => {
     try {
       let { data } = await axios.get(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?type=bar&location=${lat},${long}
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?type=liquor_store&location=${lat},${long}
           &radius=8047&key=${APIKEY}`
       );
       dispatch(gotPlaces(data));

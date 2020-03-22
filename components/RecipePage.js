@@ -27,7 +27,7 @@ const RecipePage = props => {
         <View>
           <Text style={styles.name}>{drink.strDrink} </Text>
         </View>
-        <View>
+        <View style={styles.sidebyside}>
           <View>
             <Text>
               {drink.strMeasure1} {drink.strIngredient1}
@@ -47,24 +47,28 @@ const RecipePage = props => {
             {/* {drink.strMeasure6} {drink.strIngredient6}
               {drink.strMeasure7} {drink.strIngredient7} */}
           </View>
-          {/* <View>
-            <Image source={{ uri: drink.strDrinkThumb }} style={styles.image} />
-          </View> */}
+          <View>
+            {/* <Image source={{ uri: drink.strDrinkThumb }} style={styles.image} /> */}
+          </View>
         </View>
         <View>
-          <Text style={{ color: 'white', marginTop: 15 }}>
-            {drink.strInstructions}
-          </Text>
+          <Text style={{ marginTop: 15 }}>{drink.strInstructions}</Text>
         </View>
         <View>
-          <Text style={{ color: 'white', marginTop: 15 }}>
-            Suggested Nearby Bars:
+          <Text
+            style={{
+              color: 'white',
+              marginTop: 15,
+              textDecorationLine: 'underline',
+            }}
+          >
+            Liquor Stores Near You:
           </Text>
-          <Text style={{ color: 'white' }}>{props.places1.name}</Text>
-          <Text style={{ color: 'white' }}>{props.places2.name}</Text>
-          <Text style={{ color: 'white' }}>{props.places3.name}</Text>
-          <Text style={{ color: 'white' }}>{props.places4.name}</Text>
-          <Text style={{ color: 'white' }}>{props.places5.name}</Text>
+          <Text style={{ color: 'white' }}>1) {props.places1.name}</Text>
+          <Text style={{ color: 'white' }}>2) {props.places2.name}</Text>
+          <Text style={{ color: 'white' }}>3) {props.places3.name}</Text>
+          <Text style={{ color: 'white' }}>4) {props.places4.name}</Text>
+          <Text style={{ color: 'white' }}>5) {props.places5.name}</Text>
         </View>
       </Overlay>
     </View>
@@ -73,8 +77,8 @@ const RecipePage = props => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
   },
   name: {
     fontSize: 20,
@@ -88,6 +92,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingHorizontal: 5,
     paddingBottom: 10,
+  },
+  sidebyside: {
+    flexDirection: 'row',
   },
 });
 

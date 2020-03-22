@@ -72,9 +72,9 @@ class Drinks extends React.Component {
     if (this.state.currentIndex - this.state.staticIndex === 20) {
       clearInterval(this.intervalId);
     }
-    if (this.state.currentIndex === 99) {
-      this.setState({ currentIndex: random });
-    }
+    // if (this.state.currentIndex === 99) {
+    //   this.setState({ currentIndex: random });
+    // }
     // if (
     //   this.state.currentIndex === 99 &&
     //   this.state.currentIndex - this.state.staticIndex === 20
@@ -84,7 +84,7 @@ class Drinks extends React.Component {
   }
 
   goHandler(id) {
-    let random = this.randomNum(99);
+    let random = this.randomNum(79);
     this.setState({ staticIndex: random });
     this.setState({ currentIndex: random });
     this.intervalId = setInterval(this.timer.bind(this), 200);

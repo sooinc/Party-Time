@@ -1,3 +1,6 @@
 # Fix-A-Mix
 
-Randomly chooses a cocktail recipe. And provides you with bars and liquor stores near you.
+Mobile app that randomly chooses a cocktail recipe and provides you with bars and liquor stores near you.
+
+Made with:
+React Native, Redux, theCocktailDB API, Google Location API
